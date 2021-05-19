@@ -1,0 +1,118 @@
+/*
+ * Filename: c:\Users\quaby\Documents\GitHub\Quabynah-Codelabs.github.io\styles\globals.css
+ * Path: c:\Users\quaby\Documents\GitHub\Quabynah-Codelabs.github.io
+ * Created Date: Monday, May 17th 2021, 7:52:22 am
+ * Author: Quabynah Bilson
+ * 
+ * Copyright (c) 2021 Quabynah Codelabs LLC
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&family=Raleway:wght@400;500&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wrapper {
+  @apply grid grid-rows-portfolio w-full mx-auto mt-20  gap-y-8 lg:gap-y-20;
+}
+
+/* section header */
+.section-header {
+  @apply underline text-gray-600 dark:text-gray-300 text-center;
+}
+
+/* navigation icon */
+.nav-icon {
+  @apply text-black dark:text-white h-7 w-7 cursor-pointer;
+}
+
+/* navigation link */
+.nav-link {
+  @apply cursor-pointer hover:text-black dark:hover:text-white text-gray-600 dark:text-gray-100 transition-colors duration-150;
+}
+
+/* navigation header */
+.nav-header {
+  @apply max-w-7xl mx-auto flex top-0 inset-x-0 items-center justify-between z-50;
+}
+
+/* hero section */
+.hero-section {
+  @apply px-8 py-8 lg:px-0 w-full h-full flex flex-col items-center text-center max-w-xl lg:max-w-3xl mx-auto space-y-8;
+}
+
+/* projects section */
+.projects-section {
+  @apply w-full h-full max-w-5xl flex flex-col;
+}
+
+/* avatar */
+.avatar {
+  @apply rounded-full object-cover object-top;
+}
+
+/* button with background color */
+.btn-primary {
+  @apply text-center text-white bg-primary px-8 py-4 rounded-full uppercase font-medium text-sm outline-none border-2 border-primary transition duration-150 hover:text-primary hover:bg-white;
+}
+
+/* region: hero */
+.username {
+  @apply text-lg font-medium prose;
+}
+
+.heading {
+  @apply text-4xl xl:text-6xl font-medium;
+}
+
+.subhead {
+  @apply text-base lg:text-lg font-sans prose;
+}
+
+strong {
+  @apply cursor-pointer hover:text-primary transition duration-100;
+}
+
+.phrase-container {
+  @apply w-full flex flex-col lg:flex-row space-y-6 lg:space-y-0 items-center justify-between prose;
+}
+
+.phrase-container .phrase {
+  @apply text-black dark:text-white font-semibold italic;
+}
+
+.phrase-container .author {
+  @apply text-gray-400 dark:text-gray-200 relative;
+}
+
+.phrase-container .author strong {
+  @apply text-gray-500 dark:text-gray-100;
+}
+
+.social-icon {
+  @apply w-8 h-8 cursor-pointer;
+}
+
+/* endregion */
+
+/* services rendered card */
+.service-card {
+  @apply cursor-pointer flex flex-col h-full w-full bg-white dark:bg-gray-800 rounded-md hover:shadow-lg hover:text-white hover:bg-primary transition duration-150;
+}
+.service-card h5 {
+  @apply group-hover:text-white;
+}
+.service-card p {
+  @apply group-hover:text-white;
+}
+
+/* banner image */
+.service-card .banner-img-container {
+  @apply w-full h-40 overflow-hidden rounded-md;
+}
+.service-card .banner-img-container .banner-img {
+  @apply object-cover object-top rounded-br-xl;
+}
+.services-container {
+  @apply z-10 flex flex-col w-full mx-auto max-w-6xl px-8 lg:px-0 space-y-8 lg:space-y-0 md:grid  md:grid-cols-2 md:grid-flow-row md:gap-x-4 lg:grid-cols-3 lg:gap-x-8;
+}
