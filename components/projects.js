@@ -1,23 +1,21 @@
-/*
- * File: clients.js                                                            *
- * Project: quabynah-codelabs                                                  *
- * Created Date: Monday, May 17th 2021, 9:46:58 am                             *
- * Author: Quabynah Bilson                                                     *
- * -----                                                                       *
- * Last Modified: Monday, 17th May 2021 3:21:56 pm                             *
- * Modified By: Quabynah Bilson                                                *
- * -----                                                                       *
- * Copyright (c) 2021 Quabynah Codelabs LLC                                    *
- * -----                                                                       *
- * HISTORY:                                                                    *
- * Date      	By	Comments                                                   *
- * ----------	---	---------------------------------------------------------  *
- */
-function Projects() {
+function Projects({ projects }) {
   return (
-    <section className="projects-section max-w-6xl mx-auto" id="works">
+    <section
+      className="projects-section w-screen max-w-6xl mx-auto h-full"
+      id="works"
+    >
       <h2 className="section-header text-3xl">Projects</h2>
-      <div className="flex relative"></div>
+      <div className="grid grid-cols-4 gap-x-4 gap-y-8 mt-8">
+        {projects.map((item) => (
+          <div
+            className="flex flex-col bg-gray-100 p-4 rounded-xl w-full h-96"
+            key={item.id}
+          >
+            <p className="">{item.name}</p>
+            <p className="">{item.description}</p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

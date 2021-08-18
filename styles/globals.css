@@ -13,7 +13,7 @@
 @tailwind utilities;
 
 .wrapper {
-  @apply grid grid-rows-portfolio w-full mx-auto mt-20  gap-y-8 lg:gap-y-20;
+  @apply grid w-full mx-auto mt-20  gap-y-8 lg:gap-y-20;
 }
 
 /* section header */
@@ -38,12 +38,12 @@
 
 /* hero section */
 .hero-section {
-  @apply px-8 py-8 lg:px-0 w-full h-full flex flex-col items-center text-center max-w-xl lg:max-w-3xl mx-auto space-y-8;
+  @apply px-8 py-8 lg:px-0 w-full flex flex-col items-center text-center max-w-xl lg:max-w-3xl mx-auto space-y-8;
 }
 
 /* projects section */
 .projects-section {
-  @apply w-full h-full max-w-5xl flex flex-col;
+  @apply w-full max-w-5xl flex flex-col;
 }
 
 /* avatar */

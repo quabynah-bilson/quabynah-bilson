@@ -1,31 +1,16 @@
-/*
- * File: hero.js                                                               *
- * Project: quabynah-codelabs                                                  *
- * Created Date: Monday, May 17th 2021, 9:46:22 am                             *
- * Author: Quabynah Bilson                                                     *
- * -----                                                                       *
- * Last Modified: Monday, 17th May 2021 3:21:04 pm                             *
- * Modified By: Quabynah Bilson                                                *
- * -----                                                                       *
- * Copyright (c) 2021 Quabynah Codelabs LLC                                    *
- * -----                                                                       *
- * HISTORY:                                                                    *
- * Date      	By	Comments                                                   *
- * ----------	---	---------------------------------------------------------  *
- */
-
 import Image from "next/image";
 import { IoLogoFacebook, IoLogoDribbble, IoLogoTwitter } from "react-icons/io";
 import Link from "next/link";
+import { useEffect } from "react";
 
 // https://avatars.githubusercontent.com/u/41457025?v=4
-function Hero() {
+function Hero({ user }) {
   return (
     <section className="hero-section max-w-6xl" id="hero">
       {/* avatar */}
       <div className="h-28 w-28">
         <Image
-          src={"https://avatars.githubusercontent.com/u/41457025?v=4"}
+          src={user?.avatar}
           width="100%"
           height="100%"
           className="avatar"
@@ -34,7 +19,7 @@ function Hero() {
 
       {/* username */}
       <h4 className="username">
-        Hi, I'm <strong>Quabynah Bilson</strong> 👋
+        Hi, I'm <strong>{user?.username}</strong> 👋
       </h4>
 
       {/* title */}
@@ -56,17 +41,14 @@ function Hero() {
       </div>
 
       {/* contact me */}
-      <button className="btn-primary" onClick={contactDeveloper}>
+      <button
+        className="btn-primary"
+        onClick={() => console.log("contact developer")}
+      >
         Connect with me
       </button>
     </section>
   );
-}
-
-// contact developer's account
-export async function contactDeveloper() {
-  //! contact the developer
-  console.log("contacting developer");
 }
 
 export default Hero;

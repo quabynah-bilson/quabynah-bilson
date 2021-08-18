@@ -1,21 +1,6 @@
-/*
- * File: index.js                                                              *
- * Project: quabynah-codelabs                                                  *
- * Created Date: Monday, May 17th 2021, 7:52:22 am                             *
- * Author: Quabynah Bilson                                                     *
- * -----                                                                       *
- * Last Modified: Monday, 17th May 2021 2:57:50 pm                             *
- * Modified By: Quabynah Bilson                                                *
- * -----                                                                       *
- * Copyright (c) 2021 Quabynah Codelabs LLC                                    *
- * -----                                                                       *
- * HISTORY:                                                                    *
- * Date      	By	Comments                                                     *
- * ----------	---	---------------------------------------------------------    *
- */
-
 import Header from "../components/header";
 import Hero from "../components/hero";
+import HeroModern from "../components/hero.modern";
 import Services from "../components/services";
 import Projects from "../components/projects";
 import Footer from "../components/footer";
@@ -25,40 +10,34 @@ import Tools from "../components/tools";
 import Testimonials from "../components/testimonials";
 import Faqs from "../components/faqs";
 
-function PortfolioHomePage() {
+export async function getServerSideProps(context) {
+  var userResponse = await fetch("http://localhost:2021/api/user");
+  var user = await userResponse.json();
+
+  var reposResponse = await fetch("http://localhost:2021/api/repos");
+  var repos = (await reposResponse.json()) || [];
+  console.log({ ...repos });
+
+  return {
+    props: {
+      user,
+      repos,
+    },
+  };
+}
+
+function PortfolioHomePage({ user, repos }) {
   return (
-    <div className="w-screen min-h-screen flex flex-col relative bg-gray-50">
+    <div className="w-screen min-h-screen flex flex-col relative bg-gray-50 overflow-hidden">
       {/* header */}
       <Header />
 
-      <div className="wrapper">
+      <main className="wrapper">
         {/* hero */}
-        <Hero />
+        <Hero user={user} />
 
-        {/* services */}
-        <Services />
-
-        {/* resume */}
-        <Resume />
-
-        {/* skills */}
-        <Skills />
-
-        {/* tools */}
-        <Tools />
-
-        {/* works */}
-        <Projects />
-
-        {/* testimonials */}
-        <Testimonials />
-
-        {/* faqs */}
-        <Faqs />
-
-        {/* footer */}
-        <Footer />
-      </div>
+        <Projects projects={repos} />
+      </main>
     </div>
   );
 }
