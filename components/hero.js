@@ -31,8 +31,7 @@ function Hero({ user }) {
       {/* subtitle */}
       <div className="subhead">
         <h5 className="">
-          a <strong>Mobile application</strong> &amp;
-          <strong> Full Stack developer</strong> based in Accra, Ghana.
+          A <strong>Full Stack Developer</strong> based in Accra, Ghana.
         </h5>
         <h5 className="">
           I specialize in creating cross-platform mobile applications, website
